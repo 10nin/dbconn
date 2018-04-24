@@ -1,6 +1,9 @@
-(ns dbconn.core)
+(use 'koma.db)
+(require '[clojure.string :as str])
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(def db {:classname "org.h2.Driver"
+         :subprotocol "h2"
+         :subname "resources/db/koma.db"})
+
+(defdb koma-db db)
+
